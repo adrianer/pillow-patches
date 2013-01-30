@@ -1,0 +1,30 @@
+--- setup.py.ori	2012-11-01 14:09:46.000000000 +0100
++++ setup.py	2013-01-28 18:24:50.214581236 +0100
+@@ -67,22 +67,22 @@ try:
+     import _tkinter
+ except ImportError:
+     _tkinter = None
+ 
+ 
+ NAME = 'Pillow'
+ VERSION = '1.7.8'
+ PIL_VERSION = '1.1.7'
+-TCL_ROOT = None
+-JPEG_ROOT = None
+-ZLIB_ROOT = None
++TCL_ROOT = (r"C:\opt\tcl\lib", r"C:\opt\tcl\include")
++JPEG_ROOT = ("..\\jpeg-6b\\Release", "..\\jpeg-6b")
++ZLIB_ROOT = ("..\\zlib-1.2.7\\contrib\\vstudio\\vc9\\x64\\ZlibStatReleaseWithoutAsm", "..\\zlib-1.2.7")
+ TIFF_ROOT = None
+-FREETYPE_ROOT = None
+-LCMS_ROOT = None
++FREETYPE_ROOT = ("..\\freetype-2.4.11\\objs\\win32\\vc2008", "..\\freetype-2.4.11\\include")
++LCMS_ROOT = ("..\\lcms-1.19\\Lib\\MS", "..\\lcms-1.19\\include")
+ 
+ 
+ class pil_build_ext(build_ext):
+ 
+     def build_extensions(self):
+ 
+         global TCL_ROOT
+ 
